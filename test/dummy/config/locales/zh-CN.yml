@@ -1,0 +1,23 @@
+zh-CN:
+  activerecord:
+    models:
+      post: "文章"
+    attributes:
+      post:
+        title: "标题"
+        status: "状态"
+        priority: "优先级"
+        published_at: "发布于"
+        approved_on: "审核于"
+      post/status:
+        edited: "编辑中"
+        published: "已发布"
+        approved: "已审核"
+        trashed: "已删除"
+      post/currency:
+        CNY: '人民币'
+        USD: '美元'
+        EUR: '欧元'
+        GBP: '英镑'
+        JPY: '日元'
+        HKD: '港元'

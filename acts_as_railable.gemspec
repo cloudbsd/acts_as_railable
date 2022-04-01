@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Li Qi"]
   spec.email       = ["cloudbsd@qq.com"]
   spec.homepage    = "http://github.com/cloudbsd/acts_as_moonable"
-  spec.summary     = "Acts As Moonable Gem."
-  spec.description = "ActsAsMoonable gem provides extended methods for rails."
+  spec.summary     = "Acts As Railable Gem."
+  spec.description = "ActsAsRailable gem provides extended methods for rails."
   spec.license     = "BSD"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
