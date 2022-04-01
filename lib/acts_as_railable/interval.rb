@@ -3,7 +3,7 @@ module ActsAsRailable
     extend ActiveSupport::Concern
 
     included do
-      #  database:  local date
+      #  database:  date
       # parameter:  local date
       scope :date_field_interval, -> (field, d1, d2) {
         tname = self.table_name
