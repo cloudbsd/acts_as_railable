@@ -8,3 +8,13 @@
 /test/dummy/log/*.log
 /test/dummy/storage/
 /test/dummy/tmp/
+
+
+# Ignore local gems files.
+/.gems
+.rbenv-gemsets
+
+# Ignore files.
+tags
+*.swp
+.DS_Store
