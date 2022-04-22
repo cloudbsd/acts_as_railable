@@ -10,6 +10,12 @@
 * None
 
 
+## v0.4.0 (2022-04-22)
+
+### Features
+* add ViewHelpers Module
+
+
 ## v0.3.0 (2022-04-01)
 
 ### Features
