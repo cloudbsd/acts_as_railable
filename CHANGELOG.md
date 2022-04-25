@@ -10,6 +10,12 @@
 * None
 
 
+## v0.5.0 (2022-04-25)
+
+### Features
+* add Routable Module
+
+
 ## v0.4.0 (2022-04-22)
 
 ### Features

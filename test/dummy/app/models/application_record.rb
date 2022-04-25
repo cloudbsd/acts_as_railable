@@ -21,5 +21,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   include ActsAsRailable::Interval
 
+  include ActsAsRailable::Routable
+
   primary_abstract_class
 end

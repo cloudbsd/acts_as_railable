@@ -5,7 +5,7 @@ module ActsAsRailable
     end
 
     def back_link_to name, html_options
-      link_to name, :back, html_options
+      link_to name, "javascript:history.go(-1);", html_options
     end
 
     def native_flash_messages!
@@ -42,6 +42,8 @@ module ActsAsRailable
     end
 
     def native_form_error_messages!(object)
+      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+
       if object.errors.any?
         messages = object.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
         sentence = I18n.t("errors.template.header",
@@ -50,14 +52,14 @@ module ActsAsRailable
         bodyhead = I18n.t("errors.template.body")
 
         html = <<-HTML
-          <div id="#{object.form_error_placeholder_id}" style="color: red">
+          <div id="#{form_error_id}" style="color: red">
             <h2>#{sentence}</h2>
             <ul>#{messages}</ul>
           </div>
         HTML
       else
         html = <<-HTML
-          <div id="#{object.form_error_placeholder_id}">
+          <div id="#{form_error_id}">
           </div>
         HTML
       end
@@ -66,6 +68,8 @@ module ActsAsRailable
     end
 
     def bootstrap_form_error_messages!(object)
+      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+
       if object.errors.any?
         messages = object.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
         sentence = I18n.t("errors.template.header",
@@ -74,7 +78,7 @@ module ActsAsRailable
         bodyhead = I18n.t("errors.template.body")
 
         html = <<-HTML
-          <div id="#{object.form_error_placeholder_id}">
+          <div id="#{form_error_id}">
             <div class="alert alert-danger" role="alert">
               <h6 class="alert-heading">#{sentence}</h6>
               <ul class="mb-0">#{messages}</ul>
@@ -83,7 +87,7 @@ module ActsAsRailable
         HTML
       else
         html = <<-HTML
-          <div id="#{object.form_error_placeholder_id}">
+          <div id="#{form_error_id}">
           </div>
         HTML
       end
@@ -94,6 +98,8 @@ module ActsAsRailable
     def native_devise_error_messages!(resource)
       return "" if resource.errors.empty?
 
+      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+
       messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
       sentence = I18n.t("errors.messages.not_saved",
                         count: resource.errors.count,
@@ -101,7 +107,7 @@ module ActsAsRailable
       bodyhead = I18n.t("errors.template.body")
 
       html = <<-HTML
-        <div id="error_explanation">
+        <div id="#{form_error_id}">
           <h2>#{sentence}</h2>
           <ul>#{messages}</ul>
         </div>
@@ -113,6 +119,8 @@ module ActsAsRailable
     def bootstrap_devise_error_messages!(resource)
       return "" if resource.errors.empty?
 
+      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+
       messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
       sentence = I18n.t("errors.messages.not_saved",
                         count: resource.errors.count,
@@ -120,10 +128,12 @@ module ActsAsRailable
       bodyhead = I18n.t("errors.template.body")
 
       html = <<-HTML
-      <div class="alert alert-danger" role="alert">
-        <h6>#{sentence}</h6>
-        <ul class="my-0">#{messages}</ul>
-      </div>
+        <div id="#{form_error_id}">
+          <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">#{sentence}</h6>
+            <ul class="mb-0">#{messages}</ul>
+          </div>
+        </div>
       HTML
 
       html.html_safe
