@@ -98,7 +98,7 @@ module ActsAsRailable
     def native_devise_error_messages!(resource)
       return "" if resource.errors.empty?
 
-      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+      form_error_id = resource.try(:form_error_placeholder_id) || "error_explanation"
 
       messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
       sentence = I18n.t("errors.messages.not_saved",
@@ -119,7 +119,7 @@ module ActsAsRailable
     def bootstrap_devise_error_messages!(resource)
       return "" if resource.errors.empty?
 
-      form_error_id = object.try(:form_error_placeholder_id) || "error_explanation"
+      form_error_id = resource.try(:form_error_placeholder_id) || "error_explanation"
 
       messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
       sentence = I18n.t("errors.messages.not_saved",

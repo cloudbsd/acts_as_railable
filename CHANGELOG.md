@@ -10,6 +10,12 @@
 * None
 
 
+## v0.5.1 (2022-04-29)
+
+### Bugfixes
+* Fix typo bug
+
+
 ## v0.5.0 (2022-04-25)
 
 ### Features
