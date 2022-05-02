@@ -21,26 +21,6 @@ en:
         GBP: 'GBP'
         JPY: 'JPY'
         HKD: 'HKD'
-  defaults:
-    action:
-      list: List of %{model}
-      count: Count of %{model}
-      back: Back
-      new: Add %{model}
-      show: Show
-      edit: Edit
-      destroy: Destroy
-      view: URL
-      download: Download
-      up: Up
-      down: Down
-      top: Top
-      bottom: Bottom
-    confirm:
-      are_you_sure: Are you sure?
-      destroy: Are you sure delete it?
-    disable_with:
-      submit: "Submitting..."
   posts:
     action:
       new: New %{model}

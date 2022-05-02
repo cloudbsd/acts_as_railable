@@ -25,7 +25,7 @@ class HumanableTest < ActiveSupport::TestCase
 
   test "i18n_action_name return action locale name" do
     assert_equal '修改', Post.i18n_action_name(:edit)
-    assert_equal '详情', Post.i18n_action_name(:show)
+    assert_equal '查看', Post.i18n_action_name(:show)
     assert_equal '默认', Post.i18n_action_name(:none, '默认')
     assert_equal 'None', Post.i18n_action_name(:none)
   end

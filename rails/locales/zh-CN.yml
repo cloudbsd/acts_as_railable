@@ -1,0 +1,23 @@
+zh-CN:
+  devise:
+    sessions:
+      sign_out: 退出
+  helper:
+    action:
+      index: "%{model}列表"
+      new: 新增%{model}
+      show: 查看
+      edit: 编辑
+      destroy: 删除
+      back: 返回
+      view: 链接
+      download: 下载
+      up: 向上
+      down: 向下
+      top: 置顶
+      bottom: 沉底
+    confirm:
+      are_you_sure: 您确定吗？
+      destroy: 您确定要删除吗？
+    disable_with:
+      submit: "提交中..."

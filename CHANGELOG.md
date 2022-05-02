@@ -10,6 +10,12 @@
 * None
 
 
+## v0.6.0 (2022-05-02)
+
+### Features
+* add Locale
+
+
 ## v0.5.1 (2022-04-29)
 
 ### Bugfixes

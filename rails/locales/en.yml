@@ -1,0 +1,23 @@
+en:
+  devise:
+    sessions:
+      sign_out: Log out
+  helper:
+    action:
+      index: List of %{model}
+      new: Add %{model}
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      back: Back
+      view: URL
+      download: Download
+      up: Up
+      down: Down
+      top: Top
+      bottom: Bottom
+    confirm:
+      are_you_sure: Are you sure?
+      destroy: Are you sure delete it?
+    disable_with:
+      submit: "Submitting..."

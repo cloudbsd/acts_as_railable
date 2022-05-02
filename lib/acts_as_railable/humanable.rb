@@ -9,7 +9,7 @@ module ActsAsRailable
 
       def i18n_action_name name, default_name=nil
         action_key = "#{self.table_name}.action.#{name}"
-        default_key = "application.action.#{name}" # unless I18n.exists? key
+        default_key = "helper.action.#{name}" # unless I18n.exists? key
         default_name ||= name.to_s.capitalize
         I18n.t(action_key, model: self.model_name.human, default: [ default_key.to_sym, default_name ])
       end
